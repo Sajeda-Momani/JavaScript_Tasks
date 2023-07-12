@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+
+<body>
+    <script>
+        /* 1. Write a JavaScript program that returns rate as text
+less than 50 return ==> Fail
+equal or between 50 and 59 ===> E
+equal or between 60 and 69 ===> D
+equal or between 70 and 79 ===> C
+equal or between 80 and 89 ===> B
+equal or between 90 and 100 ===> A
+*/
+
+        let msrk
+        let rate = 52;
+        switch (mark) {
+            case (rate >= 90 && rate <= 100):
+                console.log("A");
+                break;
+            case (rate >= 80 && rate <= 89):
+                console.log("B");
+                break;
+            case (rate >= 70 && rate <= 79):
+                console.log("C");
+                break;
+            case (rate >= 60 && rate <= 69):
+                console.log("D");
+                break;
+            case (rate >= 50 && rate <= 59):
+                console.log("E");
+                break;
+            default:
+                console.log("Fail")
+        }
+
+    </script>
+</body>
+
+</html>
