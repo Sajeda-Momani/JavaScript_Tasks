@@ -210,15 +210,15 @@ function largerNubmer(a, b) {
     if (a > b) {
         num = a + " is the larger";
     }
-    else if (b > a){
+    else if (b > a) {
         num = b + " is the larger"
-    } 
-        
-        console.log(num)
     }
 
-largerNubmer(5,6)
-largerNubmer(5,3)
+    console.log(num)
+}
+
+largerNubmer(5, 6)
+largerNubmer(5, 3)
 
 
 /*
@@ -240,21 +240,21 @@ Ex: smallerNubmer(5,3,3)
 => 3
 
 */
-function smallerNubmer(d,f,g) {
-if ( d<f && d<g) {
-    no = d + " is the smallest";
-} else if (f<d&&f<g) {
-    no = f + " is the smallest";
-} else {
-    no = g + " is the smallest";
+function smallerNubmer(d, f, g) {
+    if (d < f && d < g) {
+        no = d + " is the smallest";
+    } else if (f < d && f < g) {
+        no = f + " is the smallest";
+    } else {
+        no = g + " is the smallest";
 
+    }
+    console.log(no)
 }
-console.log(no)
-}
-smallerNubmer(8,6,7)
-smallerNubmer(5,99,34)
-smallerNubmer(5,99,3)
-smallerNubmer(5,3,3)
+smallerNubmer(8, 6, 7)
+smallerNubmer(5, 99, 34)
+smallerNubmer(5, 99, 3)
+smallerNubmer(5, 3, 3)
 /*
 13
 Write a function called shorterString
@@ -280,31 +280,48 @@ Ex: shorterString("air","tr","car","github","by")
 => by
 
 */
-function shorterString (q="",w="",e="",r="",t="") {
-    if (q.length < w.length && q.length< e.length&& q.length< r.length&&q.length< t.length) {
-        output = q+ " is the shorter string"
-    }
-    else if (w.length < q.length && w.length< e.length&& w.length< r.length&&w.length< t.length) {
-        output = w+ " is the shorter string"
-    }
-    else if (e.length < q.length && e.length< w.length&& e.length< r.length&&e.length< t.length) {
-        output = e+ " is the shorter string"
-    }
-    else if (r.length < q.length && r.length< w.length&& r.length< e.length&&r.length< t.length) {
-        output = e+ " is the shorter string"
-    }
-    else if (t.length < q.length && t.length< w.length&& t.length< e.length&&t.length< r.length) {
-        output = e+ " is the shorter string"
-    }
-    console.log(output)
 
+// function shorterString(q , w , e , r , t ) {
+//     if (q.length < w.length && q.length < e.length && q.length < r.length && q.length < t.length) {
+//         output = q + " is the shorter string"
+//     }
+//     else if (w.length < q.length && w.length < e.length && w.length < r.length && w.length < t.length) {
+//         output = w + " is the shorter string"
+//     }
+//     else if (e.length < q.length && e.length < w.length && e.length < r.length && e.length < t.length) {
+//         output = e + " is the shorter string"
+//     }
+//     else if (r.length < q.length && r.length < w.length && r.length < e.length && r.length < t.length) {
+//         output = e + " is the shorter string"
+//     }
+//     else if (t.length < q.length && t.length < w.length && t.length < e.length && t.length < r.length) {
+//         output = e + " is the shorter string"
+//     }
+//     console.log(output)
+
+// }
+// shorterString("air", "school", "car", "by", "github")
+// shorterString("air", "tr", "car", "by", "github")
+// shorterString("by", "tr", "car", "air", "github")
+// shorterString("air", "by", "car", "school", "github")
+// shorterString("air", "tr", "by", "car", "github")
+// shorterString("air", "tr", "car", "github", "by")
+
+function shorterString(...str) {  /*... means array*/
+    short = str[0]
+    for (let i = 0; i < str.length; i++) {
+        if (str[i].length < short.length) {
+            short = str[i]
+        }
+    }
+    console.log(short)
 }
-shorterString("air","school","car","by","github")
-shorterString("air","tr","car","by","github")
-shorterString("by","tr","car","air","github")
-shorterString("air","by","car","school","github")
-shorterString("air","tr","by","car","github")
-shorterString("air","tr","car","github","by")
+shorterString("air", "school", "car", "by", "github")
+shorterString("air", "tr", "car", "by", "github")
+shorterString("by", "tr", "car", "air", "github")
+shorterString("air", "by", "car", "school", "github")
+shorterString("air", "tr", "by", "car", "github")
+shorterString("air", "tr", "car", "github", "by")
 /*
 14
 Write a function called longerString
@@ -320,6 +337,39 @@ Ex: longerString("air","schoo","car","github")
 try all the cases (change the order of the longestString)
 */
 
+// function longerString(y = "", u = "", i = "", o = "",) {
+//     let outputt=""
+//     if (y.length > u.length && y.length > i.length && y.length > o.length) {
+//         outputt = y + " is the longer string"
+//     }
+//     else if (u.length > y.length && u.length > i.length && u.length > o.length) {
+//         outputt = u + " is the longer string"
+//     }
+//     else if (i.length > y.length && i.length > u.length && i.length > o.length) {
+//         outputt = i + " is the longer string"
+//     }
+//     else if (o.length > y.length && o.length > u.length && o.length > i.length) {
+//         outputt = o + " is the longer string"
+//     }
+
+//     console.log(outputt)
+
+// }
+
+// longerString("air", "schoo", "car", "github")
+// longerString("air", "school", "car", "github")
+
+function longerString(...str) {  /*... means array*/
+    short = str[0]
+    for (let i = 0; i < str.length; i++) {
+        if (str[i].length > short.length) {
+            short = str[i]
+        }
+    }
+    console.log(short)
+}
+longerString("air", "schoo", "car", "github")
+longerString("air", "school", "car", "github")
 /*
 15
 Write a function called isEven
@@ -333,6 +383,18 @@ Ex: isEven(2)
 => true
 
 */
+function isEven(numm) {
+    if (numm % 2 == 0) {
+        console.log("true");
+    }
+    else if (numm % 2 !== 0) {
+
+        console.log("false");
+    }
+}
+
+isEven(1)
+isEven(2)
 
 
 /*
@@ -346,8 +408,20 @@ Ex: isOdd(4)
 => false
 Ex: isOdd(5)
 => true
-
 */
+function isOdd(numm) {
+    if (numm % 2 !== 0) {
+        console.log("true");
+    }
+    else if (numm % 2 == 0) {
+
+        console.log("false");
+    }
+}
+
+isOdd(4)
+isOdd(5)
+
 
 
 /*
@@ -360,9 +434,13 @@ Ex: positive(4)
 => 4
 Ex: positive(-5)
 => 5
-
 */
+function positive(v) {
 
+    console.log(Math.abs(v))
+}
+positive(4)
+positive(-5)
 
 /*
 18
@@ -376,6 +454,13 @@ Ex: fullName("Adam","McCallen")
 Ex: fullName("Alex", "Mercer")
 => "Alex Mercer"
 */
+
+function fullName(fname, lname) {
+    funame = fname + "" + lname
+    console.log(funame)
+}
+fullName("Adam", "McCallen")
+fullName("Alex", "Mercer")
 
 
 /*
@@ -391,6 +476,12 @@ Ex: average(5,7,9,3,5)
 => 5.8
 
 */
+---------------------------------------------------------
+function average(a1, a2, a3, a4, a5) {
+    return (a1 + a2 + a3 + a4 + a5) / 5
+}
+console.log(average(1, 2, 3, 4, 5));
+
 
 
 /*
@@ -408,6 +499,11 @@ Ex: randomNumber()
 
 */
 
+function randomNumber() {
+    return Math.random()
+}
+console.log(Math.random());
+
 /*
 21
 Write a function called randomBetweenNumbers
@@ -422,6 +518,10 @@ Ex: randomBetweenNumbers(3,100)
 => 23
 
 */
+function randomBetweenNumbers(k1, k2) {
+    return Math.random() * (k2 - k1) + k1;
+}
+console.log(randomBetweenNumbers(3, 100));
 
 
 /*
@@ -444,6 +544,26 @@ Ex: scoreInUniversty(3)
 Ex: scoreInUniversty(71)
 => "C"
 */
+function scoreInUniversty(b1) {
+    switch (true) {
+        case b1 >= 95:
+            console.log("A");
+            break;
+        case b1 >= 85:
+            console.log("B");
+            break;
+        case b1 >= 70:
+            console.log("C");
+            break;
+        case b1 >= 50:
+            console.log("D");
+            break;
+        default:
+            console.log("F");
+            break;
+    }
+}
+scoreInUniversty(71)
 
 
 /*
@@ -464,7 +584,13 @@ Ex: counter()
 
 */
 
-
+let x = 0;
+function counter() {
+    x++;
+    console.log(x);
+}
+counter();
+counter();
 /*
 24
 Write a function called resetCounter
@@ -496,3 +622,8 @@ Ex: resetCounter()
 Ex: counter()
 => 1
 */
+function resetCounter() {
+    x++;
+    console.log(x - 1 + " the counter reset now");
+}
+resetCounter()

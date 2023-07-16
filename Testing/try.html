@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+    var data = [
+        { name: "John", age: 25 },
+        { name: "Jane", age: 30 },
+        { name: "Mike", age: 35 }
+      ];
+      
+      function createPersonElement(person) {
+        var container = document.createElement("div");
+      
+        var namesection = document.createElement("h2");
+        namesection.textContent = person.name;
+      
+        var agesection = document.createElement("p");
+        agesection.textContent = person.age;
+      
+        container.appendChild(namesection);
+        container.appendChild(agesection);
+      
+        return container;
+      }
+      
+      function createPersonsElements(persons) {
+        var fragment = document.createDocumentFragment();
+      
+        persons.forEach(function(person) {
+          var personElement = createPersonElement(person);
+          fragment.appendChild(personElement);
+        });
+      
+        return fragment;
+      }
+      
+      var container = document.getElementById("container");
+      var personsFragment = createPersonsElements(data);
+      container.appendChild(personsFragment);
+      </script>
+</body>
+</html>
