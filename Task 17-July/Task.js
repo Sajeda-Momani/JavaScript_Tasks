@@ -1,3 +1,4 @@
+function display(){
 fetch("Task.json")
 .then(function(response){
    return response.json();
@@ -20,3 +21,4 @@ fetch("Task.json")
    
    placeholder.innerHTML = out;
 });
+}
