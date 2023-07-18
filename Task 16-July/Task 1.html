@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+
+<body>
+    <input type="color" id="backgroundcoler">
+    <script>
+
+        //  The getElementByID() method is used for the faster access of an element. It helps us to manipulate an HTML element within our document and is supported by all the modern browsers
+        let input = document.getElementById('backgroundcoler');
+        let body = document.body;
+
+        // Set initial background color
+        // body.style.backgroundColor = sessionStorage.getItem('color') || 'black';
+
+        //  Listen for changes in the input value
+        input.addEventListener('change', function (event) {
+            //input.addEventListener('change', function (event) {
+            // The addEventListener method is used to attach an event listener to the input element. It takes two arguments:the event type to listen for ('change' in this case), and a callback function that will be executed when the event occurs.
+            // When the value of the input changes (i.e., when the user selects a color), the change event is triggered, and the callback function is executed. 
+            // The event parameter represents the event object, which contains information about the event that occurred.
+            let ChoosenColor = event.target.value;
+            //let ChoosenColor = event.target.value;
+            //Inside the callback function, we retrieve the selected color from the event target's value property using
+            // event.target.value.
+            //The event.target refers to the element that triggered the event (in this case, the input element),
+            //And value gives us the value of the selected color.
+            body.style.backgroundColor = ChoosenColor;
+            //body.style.backgroundColor = ChoosenColor;
+            // We then apply the selected color as the background color of the body element using body.style.backgroundColor =
+            // selectedColor;.
+            //This line modifies the CSS backgroundColor property of the body element to set the background color.
+            sessionStorage.color = ChoosenColor;
+            // sessionStorage.color = "ChoosenColor"; 
+            console.log(sessionStorage.color);
+            // console.log(sessionStorage.color)
+        });
+
+    </script>
+</body>
+
+</html>

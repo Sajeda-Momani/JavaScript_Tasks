@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<style>
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+
+    label {
+        display: flex;
+    }
+</style>
+
+<body>
+
+    <div class="card">
+        <form>
+
+            <label for="txta" style="font-weight: bolder;"> Eenter a Fname :</label>
+            <input placeholder="" type="text" id="txta" style="padding: 10px;margin: 10px;">
+            <label for="txtb" style="font-weight: bolder;"> Eenter a Lname :</label>
+            <input placeholder="" type="text" id="txtb" style="padding: 10px;margin: 10px;">
+            <label for="txtc" style="font-weight: bolder;"> Eenter a Bdate :</label>
+            <input placeholder="" type="text" id="txtc" style="padding: 10px;margin: 10px;">
+            <label for="txtd" style="font-weight: bolder;"> Eenter an email :</label>
+            <input placeholder="" type="text" id="txtd" style="padding: 10px;margin: 10px;">
+            <label for="txte" style="font-weight: bolder;"> Confirm Email :</label>
+            <input placeholder="" type="text" id="txte" style="padding: 10px;margin: 10px;">
+            <label for="txtf" style="font-weight: bolder;"> Password :</label>
+            <input placeholder="" type="text" id="txtf" style="padding: 10px;margin: 10px;">
+            <label for="txtg" style="font-weight: bolder;"> Confirm Password :</label>
+            <input placeholder="" type="text" id="txtg" style="padding: 10px;margin: 10px;">
+
+        </form>
+    </div>
+
+    <script>
+        let fname = document.getElementById('fname');
+
+        fname.addEventListener("input", function () {
+
+            const regexfname = /^[^\d\s]+$/;
+            ///[A-Za-z]+/;
+            if (regexfname.test(fname.value)) {
+                console.log("Correct Name")
+            } else {
+                console.log("Numbers are not allowed");
+            }
+
+        });
+
+
+
+        let lname = document.getElementById('lname');
+
+        lname.addEventListener("input", function () {
+
+            const regexlname = /^[^\d\s]+$/;
+            ///[A-Za-z]+/;
+            if (regexlname.test(lname.value)) {
+                console.log("Correct Name")
+            } else {
+                console.log("Numbers are not allowed");
+            }
+
+        });
+
+
+        let bdate = document.getElementById('bdate');
+
+        bdate.addEventListener("input", function () {
+
+            const regexbdate = /^\d{2}\/\d{2}\/\d{4}$/;
+
+            if (regexbdate.test(bdate.value)) {
+                console.log("Correct Date Format")
+            } else {
+                console.log("InCorrect Date Format");
+            }
+
+        });
+
+
+        let email = document.getElementById('email');
+
+        email.addEventListener("input", function () {
+
+            const regexemail = /^[a-zA-Z0-9.]+@[a-zA-Z]+\.[a-zA-Z]{2,}/;
+
+            if (regexemail.test(email.value)) {
+                console.log("Valid Email")
+            } else {
+                console.log("InValid Email");
+            }
+
+        });
+
+
+        let confemail = document.getElementById('confemail');
+
+        confemail.addEventListener("input", function () {
+
+            if (confemail.value == email.value) {
+                console.log("Match Email")
+            } else {
+                console.log("Email Not Matching");
+            }
+
+        });
+
+
+
+        let pass = document.getElementById('pass');
+
+        pass.addEventListener("input", function () {
+
+            const regexpass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+            if (regexpass.test(pass.value)) {
+                console.log("Valid Password")
+            } else {
+                console.log("InValid Password");
+            }
+
+        });
+
+
+        let confpass = document.getElementById('confpass');
+
+        confpass.addEventListener("input", function () {
+
+            if (confpass.value == pass.value) {
+                console.log("Match Password")
+            } else {
+                console.log("Password Not Matching");
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>

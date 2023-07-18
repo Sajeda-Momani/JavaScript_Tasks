@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input placeholder="text" type="text" id="txt" style="padding: 10px;margin: 10px;">
+        <input placeholder="text" type="text" id="txt2" style="padding: 10px;margin: 10px;">
+
+    </form>
+    <script>
+        //ways// how to reach
+        window.localStorage
+        localStorage
+        // add data
+        // 1) localStorage.setItem("key", "value")
+        localStorage.setItem("name", "sajeda");
+        // 2) localStorage.key= "value"
+        localStorage.name = "sajeda";
+        // read data
+        // 1)console.log(localStorage.getItem("key"))
+        console.log(localStorage.getItem("name"))
+        // 2)console.log(localStorage.key)
+        console.log(localStorage.name)
+        // 
+        // remove data
+        // 1) localStorage.removeItem ("key")
+        localStorage.removeItem("in")
+        // 2) to clear all data
+        // localStorage.clear()
+        /*Note 
+         1_key &value need to by strning
+         2-if the data not string we use :
+         A)JSON.stringify([array])
+         B)JSON.stringify({
+            object data
+         })
+        3_console.log(typeof localStorage.getItem("name")):to know the type of the input
+                                    
+         */
+
+        // note applications
+        localStorage.setItem("skills", JSON.stringify(["soft", "tech", "other"]))
+        localStorage.setItem("number", JSON.stringify([999715644]))
+        localStorage.setItem("info", JSON.stringify({
+            name: "sajeda",
+            age: "25",
+        }))        
+        
+        console.log(localStorage.key[0])
+
+        console.log(typeof JSON.parse(localStorage.getItem("skills")))
+        console.log(JSON.parse(localStorage.getItem("skills")))
+        console.log(JSON.parse(localStorage.getItem("info")))
+        // //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        let txt = document.getElementById("txt");
+
+        if (localStorage.length > 0) {
+            txt.value = localStorage.getItem('txt')
+        }
+
+        txt.onkeyup = function () {
+            localStorage.setItem("txt", txt.value)
+        }
+        //////////////////////////////////////////////////////////////////////////
+
+        let txt2 = document.getElementById("txt2");
+
+        if (sessionStorage.length > 0) {
+            txt2.value = sessionStorage.getItem('txt2')
+        }
+
+        txt2.onkeyup = function () {
+            sessionStorage.setItem("txt2", txt2.value)
+        }
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    </script>
+</body>
+
+</html>

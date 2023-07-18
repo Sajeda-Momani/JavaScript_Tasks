@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<style>
+    .card {
+
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="card">
+        <form>
+
+            <label for="txt1" style="font-weight: bolder;"> Name :</label>
+            <input placeholder="" type="text" id="txt1" style="padding: 10px;margin: 10px;">
+            <label for="txt2" style="font-weight: bolder;"> Age :</label>
+            <input placeholder="" type="text" id="txt2" style="padding: 10px;margin: 10px;">
+            <label for="txt3" style="font-weight: bolder;"> Gender :</label>
+            <input placeholder="" type="text" id="txt3" style="padding: 10px;margin: 10px;">
+            <label for="txt4" style="font-weight: bolder;"> Birth Date :</label>
+            <input placeholder="" type="date" id="txt4" style="padding: 10px;margin: 10px;">
+            <label for="txt5" style="font-weight: bolder;"> Your Image :</label>
+            <input placeholder="" type="text" id="txt5" style="padding: 10px;margin: 10px;">
+
+            <hr>
+
+            <label for="txt6" style="font-weight: bolder;"> Description :</label>
+            <input placeholder="" type="text" id="txt6" style="padding: 10px;margin: 10px;">
+            <label for="txt7" style="font-weight: bolder;"> Major & University :</label>
+            <input placeholder="" type="text" id="txt7" style="padding: 10px;margin: 10px;">
+            <label for="txt8" style="font-weight: bolder;"> Programing Language :</label>
+            <input placeholder="" type="checkbox" id="txt8-1" style="padding: 10px;margin: 10px;"> HTML
+            <input placeholder="" type="checkbox" id="txt8-2" style="padding: 10px;margin: 10px;"> CSS
+            <input placeholder="" type="checkbox" id="txt8-3" style="padding: 10px;margin: 10px;"> JS
+            <hr>
+
+            <label for="txt9" style="font-weight: bolder;"> Siblings Number :</label>
+            <input placeholder="" type="text" id="txt9" style="padding: 10px;margin: 10px;">
+            <label for="txt10" style="font-weight: bolder;"> Description of Siblings :</label>
+            <input placeholder="" type="text" id="txt10" style="padding: 10px;margin: 10px;">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="Card1">
+        <p id="namee"></p>
+        <p id="agee"></p>
+        <p id="genderr"></p>
+        <p id="bd"></p>
+        <img id="img">
+    </div>
+    <br>
+    <div class="Card">
+        <p id="descrip"></p>
+        <p id="mu"></p>
+        <p id="lang"></p>
+    </div>
+    <br>
+    <div class="Card">
+        <p id="sn"></p>
+        <p id="sd"></p>
+    </div>
+
+    <script>
+        let form = document.querySelector("form");
+        // The line let form = document.querySelector("form"); selects the first <form> element in the document using the document.querySelector() method. This allows us to reference the form and attach an event listener to it.
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            // The form.addEventListener('submit', function (event) { ... }); attaches an event listener to the form's submit event. This listener function will be executed when the form is submitted.
+            // The line event.preventDefault(); prevents the default form submission behavior, which would cause the page to reload. By calling preventDefault(), we ensure that the form is not submitted in the traditional manner.
+
+            // const programmingLanguages = [];
+            // if (document.getElementById('txt8-1').checked) {
+            //     programmingLanguages.push('HTML');
+            // }
+            // if (document.getElementById('txt8-2').checked) {
+            //     programmingLanguages.push('CSS');
+            // }
+            // if (document.getElementById('txt8-3').checked) {
+            //     programmingLanguages.push('JS');
+            // }
+
+            localStorage.setItem('name', document.getElementById('txt1').value)
+            localStorage.setItem('age', document.getElementById('txt2').value)
+            localStorage.setItem('gender', document.getElementById('txt3').value)
+            localStorage.setItem('birthDate', document.getElementById('txt4').value)
+            localStorage.setItem('image', document.getElementById('txt5').value)
+            localStorage.setItem('description', document.getElementById('txt6').value)
+            localStorage.setItem('majorUniversity', document.getElementById('txt7').value)
+            localStorage.setItem('programmingLanguages', document.getElementById('txt8-1').value)
+            localStorage.setItem('programmingLanguages', document.getElementById('txt8-2').value)
+            localStorage.setItem('programmingLanguages', document.getElementById('txt8-3').value)
+            localStorage.setItem('siblingsNumber', document.getElementById('txt9').value)
+            localStorage.setItem('siblingsDescription', document.getElementById('txt10').value)
+
+
+            form.reset();
+            // Finally, form.reset(); resets the form fields to their initial state, clearing the values entered by the user. -->
+        });
+    
+
+    </script>
+
+</body>
+
+</html>
