@@ -12,7 +12,7 @@ fetch("Task.json")
             <td>${info.age}</td>
             <td>${info.major}</td>
             <td>${info.university}</td>
-            <td> <img src=${info.img}> </td>
+            <td> <img src=${info.image}> </td>
          </tr>
       `;
    }
