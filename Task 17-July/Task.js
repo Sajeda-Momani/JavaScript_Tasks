@@ -5,9 +5,9 @@ fetch("Task.json")
 })
 .then(function(infos){
    let placeholder = document.querySelector("#data-output");
-   let out = "";
+   let output = "";
    for(let info of infos){
-      out += `
+      output += `
          <tr>
             <td>${info.name}</td>
             <td>${info.age}</td>
@@ -19,6 +19,6 @@ fetch("Task.json")
    }
 
    
-   placeholder.innerHTML = out;
+   placeholder.innerHTML = output;
 });
 }
